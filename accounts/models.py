@@ -30,6 +30,8 @@ class AccountUserManager(UserManager):
 
 class User(AbstractUser):
     # now that we've abstracted this class we can add
-    # number of custom attribute to our user class
+    # a number of custom attribute to our user class
+
+    stripe_id = models.CharField(max_length=40, default='')
 
     objects = AccountUserManager()
