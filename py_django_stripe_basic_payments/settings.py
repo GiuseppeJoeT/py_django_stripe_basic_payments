@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'stripe_app',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -122,5 +123,12 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 # Stripe Environment VARIABLES
-STRIPE_PUBLISHABLE = os.getenv('STRIPE_PUBLISHABLE', 'pk_test_oPhdxPShkIN5chi10MUqiaZI')
-STRIPE_SECRET = os.getenv('STRIPE_SECRET', 'sk_test_tk9A77bgj12v8CMCMb1ICuPg')
+'''
+it s a great idea to leave things such as live
+authentication codes like this out of your code, and pick
+them up from the server they are run on.
+'''
+
+# INSERT YOUR STRIPE AUTHENTICATION VALUES
+STRIPE_PUBLISHABLE = os.getenv('STRIPE_PUBLISHABLE', '')
+STRIPE_SECRET = os.getenv('STRIPE_SECRET', '')
